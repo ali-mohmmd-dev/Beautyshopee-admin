@@ -18,6 +18,14 @@ export default async function Records({
       archivedAt: null,
       ...(q ? { title: { contains: q, mode: "insensitive" as const } } : {}),
     },
+    // List rows do not need the full draft and published document snapshots.
+    select: {
+      id: true,
+      title: true,
+      slug: true,
+      version: true,
+      publishedAt: true,
+    },
     orderBy: { updatedAt: "desc" },
     take: 200,
   });
@@ -58,8 +66,8 @@ export default async function Records({
               </small>
             </div>
             <div className="row-end">
-              <span className={record.published ? "badge live" : "badge"}>
-                {record.published ? "Published" : "Draft"}
+              <span className={record.publishedAt ? "badge live" : "badge"}>
+                {record.publishedAt ? "Published" : "Draft"}
               </span>
               <span>↗</span>
             </div>

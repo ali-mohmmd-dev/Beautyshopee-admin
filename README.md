@@ -33,7 +33,7 @@ Upload PNG, JPEG, or WebP images in Media library. Files are uploaded to R2 thro
 
 ## Database ownership
 
-Prisma uses pooled `DATABASE_URL` for app queries and `DIRECT_URL` for migrations. This CMS owns migrations. The storefront has the matching schema and reads published content directly from PostgreSQL on the server. Its API routes provide draft preview. No separate backend application is needed.
+Prisma uses pooled `DATABASE_URL` for app queries and `DIRECT_URL` for migrations. The CMS runtime caps its Prisma pool at 3 connections per process, waits up to 20 seconds for a pool slot, and allows 10 seconds to establish a connection. Explicit `connection_limit`, `pool_timeout`, and `connect_timeout` parameters in `DATABASE_URL` override these defaults. Budget the combined pools of CMS, storefront, workers, and deployment replicas against the database plan limit. Restart the CMS after changing connection settings; development hot reload deliberately reuses its existing Prisma client. This CMS owns migrations. The storefront has the matching schema and reads published content directly from PostgreSQL on the server. Its API routes provide draft preview. No separate backend application is needed.
 
 The relational `Content` table stores validated document records with draft and published JSON snapshots. Brand, category, company, and review references are validated in transactions. `Revision` and `Media` are separate tables. Published slugs stay fixed to preserve existing links.
 
