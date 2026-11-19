@@ -1,0 +1,56 @@
+[
+  {
+    "section": "brand-pillars",
+    "key": "items",
+    "items": [
+      {
+        "title": "Authentic brands",
+        "text": "Direct brand sourcing with GST invoice on every purchase. 100% original cosmetics.",
+        "image": {
+          "url": "",
+          "alt": "",
+          "caption": "",
+          "imageText": "",
+          "decorative": false
+        },
+        "link": { "label": "", "href": "" }
+      },
+      {
+        "title": "In-store shade testing",
+        "text": "Visit our shop at New Bus Stand, Tirur to test shades in natural light before buying.",
+        "image": {
+          "url": "",
+          "alt": "",
+          "caption": "",
+          "imageText": "",
+          "decorative": false
+        },
+        "link": { "label": "", "href": "" }
+      },
+      {
+        "title": "Expert advice",
+        "text": "Friendly beauty advisors in store to curate routines for your specific skin type.",
+        "image": {
+          "url": "",
+          "alt": "",
+          "caption": "",
+          "imageText": "",
+          "decorative": false
+        },
+        "link": { "label": "", "href": "" }
+      },
+      {
+        "title": "Local express delivery",
+        "text": "Same-day delivery options across Tirur and nearby areas with free delivery above ₹999.",
+        "image": {
+          "url": "",
+          "alt": "",
+          "caption": "",
+          "imageText": "",
+          "decorative": false
+        },
+        "link": { "label": "", "href": "" }
+      }
+    ]
+  }
+]

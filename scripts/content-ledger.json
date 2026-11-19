@@ -1,0 +1,1014 @@
+{
+  "ledger": [
+    {
+      "section": "hero",
+      "key": "image-0",
+      "text": "src/assets/hero-portrait.jpg",
+      "field": "image",
+      "global": false
+    },
+    {
+      "section": "hero",
+      "key": "alt-1",
+      "text": "Editorial beauty portrait — Beauty Shoppee Tirur",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "hero",
+      "key": "text-2",
+      "text": "Beauty worth",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "hero",
+      "key": "text-3",
+      "text": "discovering.",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "hero",
+      "key": "text-4",
+      "text": ", Kerala — authentic beauty brands, shade testers in store and everyday offers, curated for every skin tone.",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "hero",
+      "key": "href-5",
+      "text": "/products",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "hero",
+      "key": "text-6",
+      "text": "Explore the products",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "hero",
+      "key": "src-7",
+      "text": "https://images.unsplash.com/photo-1718490953028-021d352b14fd?auto=format&fit=crop&w=1200&q=80",
+      "field": "image",
+      "global": false
+    },
+    {
+      "section": "hero",
+      "key": "alt-8",
+      "text": "Luxury cosmetics collection",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "hero",
+      "key": "text-9",
+      "text": "The collection",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "hero",
+      "key": "text-10",
+      "text": "New arrivals in store",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "category-grid",
+      "key": "text-0",
+      "text": "Shop by category",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "product-carousel",
+      "key": "text-0",
+      "text": "Featured this week",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "product-carousel",
+      "key": "href-1",
+      "text": "/products",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "product-carousel",
+      "key": "text-2",
+      "text": "View all products",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "editorial-spotlight",
+      "key": "src-0",
+      "text": "https://images.unsplash.com/photo-1654969038161-ebd30ff4f73d?auto=format&fit=crop&w=1920&q=80",
+      "field": "image",
+      "global": false
+    },
+    {
+      "section": "editorial-spotlight",
+      "key": "alt-1",
+      "text": "Model applying cream blush",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "editorial-spotlight",
+      "key": "image-2",
+      "text": "src/assets/product-lip.jpg",
+      "field": "image",
+      "global": false
+    },
+    {
+      "section": "editorial-spotlight",
+      "key": "alt-3",
+      "text": "Silk Lip Oil",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "editorial-spotlight",
+      "key": "text-4",
+      "text": "Silk Lip Oil",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "editorial-spotlight",
+      "key": "text-5",
+      "text": "Discover",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "editorial-spotlight",
+      "key": "text-6",
+      "text": "Quick add",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "popular-brands",
+      "key": "text-0",
+      "text": "Popular brands",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "popular-brands",
+      "key": "aria-label-1",
+      "text": "Previous brand",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "popular-brands",
+      "key": "aria-label-2",
+      "text": "Next brand",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "popular-brands",
+      "key": "text-3",
+      "text": "Sample brand",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "brand-pillars",
+      "key": "aria-label-0",
+      "text": "Shopping information",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "brand-pillars",
+      "key": "text-1",
+      "text": "In-store shopping & testers",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "brand-pillars",
+      "key": "text-2",
+      "text": "Delivery available · Free above ₹999",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "brand-pillars",
+      "key": "text-3",
+      "text": "1st Floor, New Bus Stand,",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "brand-pillars",
+      "key": "text-4",
+      "text": "reviews)",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "bundle-showcase",
+      "key": "text-0",
+      "text": "Four everyday icons in one box — our most-loved shades, paired for a complete look.",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "bundle-showcase",
+      "key": "text-1",
+      "text": "Total value",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "bundle-showcase",
+      "key": "text-2",
+      "text": "Kit price",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "bundle-showcase",
+      "key": "text-3",
+      "text": "Add to cart",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "bundle-showcase",
+      "key": "text-4",
+      "text": "Free delivery above ₹999 · Testers available in store at Tirur",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "reviews",
+      "key": "text-0",
+      "text": "Verified buyer",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "reviews",
+      "key": "text-1",
+      "text": "Loved in",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "reviews",
+      "key": "text-2",
+      "text": "customer reviews",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "visit-section",
+      "key": "text-0",
+      "text": "Find us in",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "visit-section",
+      "key": "text-1",
+      "text": "Explore the entire collection in person, test shades in natural light with our beauty advisors, or call us to check stock and same-day delivery in Tirur.",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "visit-section",
+      "key": "text-2",
+      "text": "Get directions",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "visit-section",
+      "key": "text-3",
+      "text": "Call the shop",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "visit-section",
+      "key": "text-4",
+      "text": "Store location",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "visit-section",
+      "key": "text-5",
+      "text": "Located in: Foreign Market Tirur",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "visit-section",
+      "key": "text-6",
+      "text": "Opening hours",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "visit-section",
+      "key": "text-7",
+      "text": "Open 7 days a week",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "visit-section",
+      "key": "text-8",
+      "text": "Phone & inquiries",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "visit-section",
+      "key": "text-9",
+      "text": "Quick support for orders & shade guidance",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "about",
+      "key": "text-0",
+      "text": "About Beauty Shoppee",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "about",
+      "key": "text-1",
+      "text": "Your local beauty shop in",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "about",
+      "key": "text-2",
+      "text": "We stock authentic cosmetics at the New Bus Stand in Tirur. Drop in to try shades in natural light, find an everyday favourite, or get help putting together a routine.",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "about",
+      "key": "href-3",
+      "text": "/contact",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "about",
+      "key": "text-4",
+      "text": "Plan your visit",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "about",
+      "key": "image-5",
+      "text": "src/assets/spotlight.jpg",
+      "field": "image",
+      "global": false
+    },
+    {
+      "section": "about",
+      "key": "alt-6",
+      "text": "Model applying cream blush",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "about",
+      "key": "text-7",
+      "text": "Try a shade before you buy.",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "about",
+      "key": "text-8",
+      "text": "If you’re just getting into makeup or replacing a favourite, our team can help you compare shades and choose products that suit your skin tone and routine.",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "about",
+      "key": "href-9",
+      "text": "/products",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "about",
+      "key": "text-10",
+      "text": "Browse the collection",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "contact",
+      "key": "text-0",
+      "text": "Beauty Shoppee Tirur",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "contact",
+      "key": "text-1",
+      "text": "Contact us",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "contact",
+      "key": "text-2",
+      "text": "Call us about products, orders, or local delivery. For shade advice, visit the shop and try our in-store testers.",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "contact",
+      "key": "text-3",
+      "text": "Before you visit",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "contact",
+      "key": "text-4",
+      "text": "Can I check if a product is in stock?",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "contact",
+      "key": "href-5",
+      "text": "/products",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "contact",
+      "key": "text-6",
+      "text": "Browse the collection",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "contact",
+      "key": "text-7",
+      "text": ", then call",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "contact",
+      "key": "text-8",
+      "text": "to check availability before you visit.",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "contact",
+      "key": "text-9",
+      "text": "Do you deliver locally?",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "contact",
+      "key": "text-10",
+      "text": "Same-day delivery is available in Tirur and nearby areas, with free delivery on orders above ₹999. Call the shop to check delivery for your address.",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "product-listing",
+      "key": "text-0",
+      "text": "Shop the products",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "product-listing",
+      "key": "aria-label-1",
+      "text": "Filter products",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "product-listing",
+      "key": "placeholder-2",
+      "text": "Search the collection",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "product-listing",
+      "key": "text-3",
+      "text": "No products match “",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "product-listing",
+      "key": "text-4",
+      "text": "Clear search",
+      "field": "text",
+      "global": false
+    },
+    {
+      "section": "site-header",
+      "key": "text-0",
+      "text": "Free delivery on orders above ₹999 · In-store testers in Tirur",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-header",
+      "key": "aria-label-1",
+      "text": "Menu",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-header",
+      "key": "href-2",
+      "text": "/",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-header",
+      "key": "src-3",
+      "text": "/beauty-shoppee-logo.png",
+      "field": "image",
+      "global": true
+    },
+    {
+      "section": "site-header",
+      "key": "alt-4",
+      "text": "Beauty Shoppee",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-header",
+      "key": "aria-label-5",
+      "text": "Main navigation",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-header",
+      "key": "text-6",
+      "text": "EN · ₹ INR",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-header",
+      "key": "aria-label-7",
+      "text": "Search",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-header",
+      "key": "aria-label-8",
+      "text": "Wishlist",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-header",
+      "key": "aria-label-9",
+      "text": "Cart",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-header",
+      "key": "text-10",
+      "text": "Your wishlist is empty — tap the heart on any product to save it.",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-header",
+      "key": "aria-label-11",
+      "text": "Mobile navigation",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-header",
+      "key": "aria-label-12",
+      "text": "Store search",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-header",
+      "key": "aria-label-13",
+      "text": "Search products",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-header",
+      "key": "placeholder-14",
+      "text": "Search products",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-header",
+      "key": "text-15",
+      "text": "View results",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-header",
+      "key": "aria-label-16",
+      "text": "Cart",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-header",
+      "key": "text-17",
+      "text": "Cart (",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-header",
+      "key": "aria-label-18",
+      "text": "Close cart",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-header",
+      "key": "text-19",
+      "text": "Thank you",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-header",
+      "key": "text-20",
+      "text": "Your order has been received. We&apos;ll confirm it by phone shortly — or call the store directly at",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-header",
+      "key": "text-21",
+      "text": "Continue shopping",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-header",
+      "key": "text-22",
+      "text": "Your cart is empty. Add something beautiful.",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-header",
+      "key": "aria-label-23",
+      "text": "Decrease quantity",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-header",
+      "key": "aria-label-24",
+      "text": "Increase quantity",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-header",
+      "key": "text-25",
+      "text": "Subtotal",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-header",
+      "key": "text-26",
+      "text": "Place order · pay at store",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-header",
+      "key": "text-27",
+      "text": "Reserve online, pay on pickup or delivery in Tirur.",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-footer",
+      "key": "text-0",
+      "text": "Beauty letter",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-footer",
+      "key": "text-1",
+      "text": "New arrivals, offers and restocks — straight to your inbox.",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-footer",
+      "key": "text-2",
+      "text": "Store & contact",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-footer",
+      "key": "text-3",
+      "text": "Get directions",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-footer",
+      "key": "text-4",
+      "text": "Explore",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-footer",
+      "key": "href-5",
+      "text": "/",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-footer",
+      "key": "src-6",
+      "text": "/beauty-shoppee-logo.png",
+      "field": "image",
+      "global": true
+    },
+    {
+      "section": "site-footer",
+      "key": "alt-7",
+      "text": "Beauty Shoppee",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-footer",
+      "key": "text-8",
+      "text": "Tirur&apos;s trusted cosmetics destination — 100% authentic products, billed with GST.",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-footer",
+      "key": "text-9",
+      "text": "Rated",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-footer",
+      "key": "text-10",
+      "text": "reviews",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-footer",
+      "key": "text-11",
+      "text": "© 2026 Beauty Shoppee",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "site-footer",
+      "key": "text-12",
+      "text": "· Kerala 676101",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "footer-content",
+      "key": "text-0",
+      "text": "Popular searches",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "footer-content",
+      "key": "text-1",
+      "text": "Shop makeup at Beauty Shoppee Tirur",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "footer-content",
+      "key": "text-2",
+      "text": "Browse blush compacts, lip oils and everyday makeup sets in the",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "footer-content",
+      "key": "href-3",
+      "text": "/products",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "footer-content",
+      "key": "text-4",
+      "text": "Beauty Shoppee collection",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "footer-content",
+      "key": "text-5",
+      "text": ". Try shades in person at our Tirur shop if you want to compare how they look in natural light.",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "footer-content",
+      "key": "text-6",
+      "text": "Visit the Tirur store",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "footer-content",
+      "key": "text-7",
+      "text": "Find us at",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "footer-content",
+      "key": "text-8",
+      "text": ". Check",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "footer-content",
+      "key": "href-9",
+      "text": "/contact",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "footer-content",
+      "key": "text-10",
+      "text": "store hours and directions",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "footer-content",
+      "key": "text-11",
+      "text": ", or call the shop to ask about product availability and local delivery.",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "newsletter-form",
+      "key": "text-0",
+      "text": "You&apos;re on the list. Welcome.",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "newsletter-form",
+      "key": "placeholder-1",
+      "text": "Email address",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "newsletter-form",
+      "key": "aria-label-2",
+      "text": "Email address",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "newsletter-form",
+      "key": "text-3",
+      "text": "Join",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "category-slider",
+      "key": "aria-label-0",
+      "text": "Category navigation slider",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "product-card",
+      "key": "text-0",
+      "text": "Quick add",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "product-actions",
+      "key": "text-0",
+      "text": "Add to cart",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "product-reviews",
+      "key": "text-0",
+      "text": "No reviews for this product yet.",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "product-reviews",
+      "key": "text-1",
+      "text": "Average rating out of 5",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "product-reviews",
+      "key": "aria-label-2",
+      "text": "Ratings breakdown",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "product-reviews",
+      "key": "aria-label-3",
+      "text": "Customer reviews",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "product-reviews",
+      "key": "text-4",
+      "text": "Sample review",
+      "field": "text",
+      "global": true
+    },
+    {
+      "section": "product-reviews",
+      "key": "text-5",
+      "text": "stars",
+      "field": "text",
+      "global": true
+    }
+  ],
+  "groups": {
+    "home": [
+      "hero",
+      "category-grid",
+      "product-carousel",
+      "editorial-spotlight",
+      "popular-brands",
+      "brand-pillars",
+      "bundle-showcase",
+      "reviews",
+      "visit-section"
+    ],
+    "about": ["about", "brand-pillars", "reviews"],
+    "contact": ["contact", "visit-section"],
+    "products": ["product-listing"]
+  }
+}
