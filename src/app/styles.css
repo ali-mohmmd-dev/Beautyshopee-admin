@@ -714,3 +714,98 @@ legend {
     padding-top: 18px;
   }
 }
+
+.image-selector {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+.image-picker {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+}
+.image-picker > summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  cursor: pointer;
+  list-style: none;
+}
+.image-picker > summary::-webkit-details-marker {
+  display: none;
+}
+.image-picker-thumb {
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  object-fit: contain;
+  border-radius: 5px;
+  background: var(--bg);
+}
+.image-picker-name {
+  min-width: 0;
+  flex: 1;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.image-picker-chevron {
+  flex-shrink: 0;
+  transition: transform 160ms ease;
+}
+.image-picker[open] .image-picker-chevron {
+  transform: rotate(180deg);
+}
+.image-picker-panel {
+  display: grid;
+  gap: 10px;
+  padding: 0 12px 12px;
+}
+.image-picker-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 320px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.image-picker-option {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px;
+}
+.image-picker-option:hover,
+.image-picker-option[aria-pressed="true"] {
+  background: var(--sage);
+  border-color: var(--green);
+}
+.image-picker-selected {
+  color: var(--green);
+  font-size: 12px;
+  flex-shrink: 0;
+}
+.selected-image {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  min-width: 0;
+}
+.selected-image figcaption {
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+@media (max-width: 480px) {
+  .image-picker-option {
+    flex-wrap: wrap;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .image-picker-chevron {
+    transition: none;
+  }
+}

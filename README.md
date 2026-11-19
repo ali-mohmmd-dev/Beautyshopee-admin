@@ -47,3 +47,13 @@ npm run build
 `scripts/smoke.ts` verifies authentication, draft isolation, publishing, optimistic concurrency, new product variants, R2 uploads, public images, and image metadata editing. It expects CMS and storefront production servers on ports 3101 and 3100, or the `TEST_CMS_URL` and `TEST_STOREFRONT_URL` variables. It restores edited content and removes temporary test records and uploads.
 
 The initial studio uses one administrator password. Individual staff accounts and roles can be added later.
+
+## Vercel environment
+
+Configure the server environment variables from `.env.example` in the Vercel project for each deployment environment you use. Local `.env` and `.local-admin.txt` files are deliberately excluded from Git and are not uploaded by a Git deployment. In particular, set pooled `DATABASE_URL`, migration `DIRECT_URL`, `CMS_SESSION_SECRET`, `CMS_PASSWORD_HASH`, `CMS_CONTENT_TOKEN`, the R2 variables, and the deployed `STOREFRONT_URL`. Redeploy after changing deployment variables. The build can import database modules without `DATABASE_URL`; database requests still require a valid runtime connection URL.
+
+## Storefront cache refresh
+
+Set `STOREFRONT_URL` to the live storefront origin and configure the same private `CMS_CONTENT_TOKEN` on both apps. After a publish or unpublish transaction commits, the CMS calls the storefront cache refresh endpoint, retrying once on failure. Saving a draft does not invalidate public content. Delivery failure returns the committed record version and a visible warning, so retrying publication does not cause a stale-version conflict. Published content has a 60-second fallback expiry on the storefront. Existing visitor tabs need a reload to pick up changed client-side content.
+
+With production test servers on ports 3100 (storefront) and 3101 (CMS, `STOREFRONT_URL=http://localhost:3100`), run `npx tsx scripts/cache-smoke.ts` to verify cache reuse, draft isolation, private previews, authentication, publishing, and unpublishing. The test creates and removes a temporary page.

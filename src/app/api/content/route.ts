@@ -4,6 +4,7 @@ import { Prisma } from "@prisma/client";
 import { checkOrigin, requireAdmin } from "@/lib/auth";
 import { kinds, type Kind } from "@/lib/model";
 import { Conflict, saveContent } from "@/lib/content";
+import { refreshStorefront } from "@/lib/storefront-cache";
 export async function POST(request: Request) {
   try {
     await requireAdmin();
@@ -27,7 +28,11 @@ export async function POST(request: Request) {
       body.version,
       body.action,
     );
+    const refreshed = body.action === "save" || (await refreshStorefront());
     return NextResponse.json({
+      warning: refreshed
+        ? undefined
+        : `Content was saved, but the website cache could not be refreshed. Retry ${body.action === "unpublish" ? "Unpublish" : "Publish"}, or check the storefront connection settings.`,
       id: record.id,
       version: record.version,
       publishedAt: record.publishedAt,

@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { ImageSelector } from "./image-selector";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { emptyImage, emptyVariant, type Kind } from "@/lib/model";
@@ -182,11 +183,12 @@ export function Editor({
       setLive(Boolean(result.publishedAt));
       setDirty(false);
       setMessage(
-        action === "publish"
-          ? "Published to the storefront."
-          : action === "unpublish"
-            ? "Removed from the published storefront."
-            : "Draft saved.",
+        result.warning ||
+          (action === "publish"
+            ? "Published to the storefront."
+            : action === "unpublish"
+              ? "Removed from the published storefront."
+              : "Draft saved."),
       );
       if (!id) router.replace("/content/" + kind + "/" + result.id);
       router.refresh();
@@ -545,39 +547,7 @@ function Field({
       <fieldset className={image ? "wide" : undefined}>
         <legend>{title}</legend>
         {image && (
-          <>
-            <label>
-              Choose from media library
-              <select
-                value={media.some((m) => m.url === value.url) ? value.url : ""}
-                onChange={(event) => {
-                  const item = media.find((m) => m.url === event.target.value);
-                  if (item)
-                    onChange({
-                      url: item.url,
-                      alt: item.alt,
-                      caption: item.caption,
-                      imageText: item.imageText,
-                      decorative: item.decorative,
-                    });
-                }}
-              >
-                <option value="">Select uploaded image</option>
-                {media.map((item) => (
-                  <option value={item.url} key={item.id}>
-                    {item.filename}
-                  </option>
-                ))}
-              </select>
-            </label>
-            {value.url && (
-              <img
-                className="image-preview"
-                src={value.url}
-                alt={value.alt || ""}
-              />
-            )}
-          </>
+          <ImageSelector value={value} media={media} onChange={onChange} />
         )}
         <div className="fields">
           {orderedKeys(value).map((key) => (
