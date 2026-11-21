@@ -104,7 +104,7 @@ export async function saveContent(
       }
       if (action === "publish") {
         if (
-          !["reviews", "companies"].includes(kind) &&
+          !["reviews", "companies", "settings"].includes(kind) &&
           (!parsed.seo.title.trim() || !parsed.seo.description.trim())
         )
           throw Error("Add an SEO title and description before publishing");

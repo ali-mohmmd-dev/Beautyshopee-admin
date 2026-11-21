@@ -239,7 +239,7 @@ export function Editor({
     ),
     Variants: ["variants"],
     Images: ["images"],
-    "Search & social": ["seo"],
+    "Search & social": ["companies", "reviews", "settings"].includes(kind) ? [] : ["seo"],
     History: [],
   };
   return (
