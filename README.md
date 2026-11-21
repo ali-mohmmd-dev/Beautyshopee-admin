@@ -57,3 +57,13 @@ Configure the server environment variables from `.env.example` in the Vercel pro
 Set `STOREFRONT_URL` to the live storefront origin and configure the same private `CMS_CONTENT_TOKEN` on both apps. After a publish or unpublish transaction commits, the CMS calls the storefront cache refresh endpoint, retrying once on failure. Saving a draft does not invalidate public content. Delivery failure returns the committed record version and a visible warning, so retrying publication does not cause a stale-version conflict. Published content has a 60-second fallback expiry on the storefront. Existing visitor tabs need a reload to pick up changed client-side content.
 
 With production test servers on ports 3100 (storefront) and 3101 (CMS, `STOREFRONT_URL=http://localhost:3100`), run `npx tsx scripts/cache-smoke.ts` to verify cache reuse, draft isolation, private previews, authentication, publishing, and unpublishing. The test creates and removes a temporary page.
+
+## Shop by concern
+
+Create concerns under **Shop by concern** with a name, slug, description, image/alt text and SEO fields. Publish each concern, then select it in a product’s **Concerns** field and publish the product. Products can belong to several concerns. In **Navigation & footer → Shop by concern — homepage**, edit heading, intro and visibility, choose concerns, and use the up/down buttons to order them. An empty selection automatically includes all enabled concerns that have published products. Empty concerns stay off the homepage. Turning off **Visible on website** on a concern and publishing hides its public page, homepage card and sitemap entry; preview still works. Unpublishing a concern used by published products/settings is blocked until its references are removed. No database migration is needed: concerns use the existing versioned content records.
+
+Run `npx tsx scripts/concerns-smoke.ts` against the production test servers on ports 3100/3101 to verify concern publishing, previews, references, SEO, visibility, and cache refresh. It creates and removes temporary records. Optional browser checks can be supplied through `CONCERN_BROWSER_SCRIPT`.
+
+## Homepage banners
+
+Open Pages & SEO → Home → Content → Homepage hero banners. Choose a wide Desktop banner image and a separate Mobile banner image (1:1 square) using the thumbnail pickers. Both placements have independent image metadata. Save draft for preview, then Publish to refresh the storefront cache. Mobile screens below 768px use the square image; larger screens use the desktop artwork. `scripts/install-hero-banners.ts` registers the bundled artwork in R2 and updates only those homepage fields, preserving other draft and published values.

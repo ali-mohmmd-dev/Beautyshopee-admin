@@ -809,3 +809,22 @@ legend {
     transition: none;
   }
 }
+
+.concern-order {
+  padding-left: 20px;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+.concern-order li {
+  min-width: 0;
+}
+.concern-order li > span {
+  overflow-wrap: anywhere;
+}
+.concern-order li > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}

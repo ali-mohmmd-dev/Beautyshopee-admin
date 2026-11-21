@@ -49,23 +49,30 @@ export async function saveContent(
           }
         }
       }
-      const categoryIds = (parsed as Record<string, unknown>).categoryIds;
-      if (Array.isArray(categoryIds)) {
+      const document = parsed as Record<string, unknown>;
+      const section = document.concernSection as
+        { concernIds?: string[] } | undefined;
+      for (const [ids, targetKind] of [
+        [document.categoryIds, "categories"],
+        [document.concernIds, "concerns"],
+        [section?.concernIds, "concerns"],
+      ] as const) {
+        if (!Array.isArray(ids) || !ids.length) continue;
         const matches = await tx.content.count({
           where: {
-            kind: "categories",
-            id: { in: categoryIds },
+            kind: targetKind,
+            id: { in: ids },
             archivedAt: null,
             ...(action === "publish"
               ? { published: { not: Prisma.DbNull } }
               : {}),
           },
         });
-        if (matches !== new Set(categoryIds).size)
+        if (matches !== new Set(ids).size)
           throw Error(
             "Choose valid " +
               (action === "publish" ? "published " : "") +
-              "categories",
+              targetKind,
           );
       }
       if (kind === "products") {
@@ -141,7 +148,9 @@ export async function saveContent(
       }
       if (
         action === "unpublish" &&
-        ["brands", "categories", "companies", "products"].includes(kind)
+        ["brands", "categories", "concerns", "companies", "products"].includes(
+          kind,
+        )
       ) {
         const dependents = await tx.content.findMany({
           where: { published: { not: Prisma.DbNull }, archivedAt: null },

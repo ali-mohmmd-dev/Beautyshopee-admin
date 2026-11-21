@@ -5,6 +5,7 @@ const links = [
   ["/", "Overview"],
   ["/content/products", "Products"],
   ["/content/categories", "Categories"],
+  ["/content/concerns", "Shop by concern"],
   ["/content/brands", "Brands"],
   ["/content/companies", "Companies"],
   ["/content/pages", "Pages & SEO"],

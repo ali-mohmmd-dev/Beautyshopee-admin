@@ -3,6 +3,7 @@ export const kinds = [
   "pages",
   "products",
   "categories",
+  "concerns",
   "brands",
   "companies",
   "settings",
@@ -51,6 +52,27 @@ export const seoSchema = z.object({
   socialImage: z.string().max(2048),
   noIndex: z.boolean(),
 });
+export const defaultConcernSection = {
+  enabled: true,
+  heading: "Shop by concern",
+  text: "Find the right care for your everyday needs.",
+  concernIds: [] as string[],
+};
+const concernIdsSchema = z
+  .array(short.min(1))
+  .max(50)
+  .refine(
+    (ids) => new Set(ids).size === ids.length,
+    "Choose each concern only once",
+  );
+const concernSectionSchema = z
+  .object({
+    enabled: z.boolean(),
+    heading: short,
+    text,
+    concernIds: concernIdsSchema,
+  })
+  .default(defaultConcernSection);
 const base = { name: short.min(1), slug, seo: seoSchema };
 export const variantSchema = z
   .object({
@@ -96,6 +118,7 @@ export const schemas = {
       ...base,
       brandId: short,
       categoryIds: z.array(short).max(20),
+      concernIds: concernIdsSchema.default([]),
       companyId: short,
       shortDescription: text,
       description: text,
@@ -150,6 +173,9 @@ export const schemas = {
   pages: z.object({
     ...base,
     path: z.string().startsWith("/").max(200),
+    heroBanner: z
+      .object({ desktopImage: imageSchema, mobileImage: imageSchema })
+      .optional(),
     blocks: z.array(blockSchema).max(60),
   }),
   brands: z.object({
@@ -167,6 +193,12 @@ export const schemas = {
     image: imageSchema,
     attributes: z.array(short).max(30),
   }),
+  concerns: z.object({
+    ...base,
+    description: text,
+    image: imageSchema,
+    enabled: z.boolean().default(true),
+  }),
   companies: z.object({
     ...base,
     description: text,
@@ -175,6 +207,7 @@ export const schemas = {
   }),
   settings: z.object({
     ...base,
+    concernSection: concernSectionSchema,
     announcement: text,
     logo: imageSchema,
     favicon: imageSchema,
@@ -237,6 +270,7 @@ export function emptyRecord(kind: Kind): Record<string, unknown> {
         ...base,
         brandId: "",
         categoryIds: [],
+        concernIds: [],
         companyId: "",
         shortDescription: "",
         description: "",
@@ -268,6 +302,8 @@ export function emptyRecord(kind: Kind): Record<string, unknown> {
         image: emptyImage,
         attributes: [],
       };
+    case "concerns":
+      return { ...base, description: "", image: emptyImage, enabled: true };
     case "companies":
       return { ...base, description: "", website: "", contact: "" };
     case "reviews":
@@ -283,6 +319,7 @@ export function emptyRecord(kind: Kind): Record<string, unknown> {
     case "settings":
       return {
         ...base,
+        concernSection: structuredClone(defaultConcernSection),
         announcement: "",
         logo: emptyImage,
         favicon: emptyImage,

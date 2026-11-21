@@ -20,7 +20,9 @@ export default async function Edit({
   const [references, media] = await Promise.all([
     db.content.findMany({
       where: {
-        kind: { in: ["brands", "companies", "categories", "products"] },
+        kind: {
+          in: ["brands", "companies", "categories", "concerns", "products"],
+        },
         archivedAt: null,
       },
       select: { id: true, title: true, kind: true, draft: true },

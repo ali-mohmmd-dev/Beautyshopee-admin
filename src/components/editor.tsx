@@ -3,7 +3,12 @@ import { useState } from "react";
 import { ImageSelector } from "./image-selector";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { emptyImage, emptyVariant, type Kind } from "@/lib/model";
+import {
+  emptyImage,
+  emptyVariant,
+  defaultConcernSection,
+  type Kind,
+} from "@/lib/model";
 type Data = Record<string, any>;
 type Reference = { id: string; title: string; kind: string; draft: Data };
 type Media = {
@@ -17,11 +22,16 @@ type Media = {
 };
 const labels: Record<string, string> = {
   name: "Name",
+  heroBanner: "Homepage hero banners",
+  desktopImage: "Desktop banner image",
+  mobileImage: "Mobile banner image (1:1 square)",
   slug: "URL slug",
   seo: "Search & social",
   brandId: "Brand",
   companyId: "Company",
   categoryIds: "Categories",
+  concernIds: "Concerns",
+  concernSection: "Shop by concern — homepage",
   parentId: "Parent category",
   productId: "Product",
   shortDescription: "Short description",
@@ -40,7 +50,7 @@ const labels: Record<string, string> = {
   sample: "Sample content",
   path: "Storefront path",
   key: "Section key",
-  enabled: "Show this section",
+  enabled: "Visible on website",
 };
 function label(key: string) {
   return (
@@ -82,6 +92,8 @@ const preferredKeys = [
   "slug",
   "brandId",
   "categoryIds",
+  "concernIds",
+  "concernSection",
   "companyId",
   "parentId",
   "productId",
@@ -93,6 +105,7 @@ const preferredKeys = [
   "description",
   "text",
   "path",
+  "heroBanner",
   "blocks",
   "specifications",
   "bundleItems",
@@ -129,6 +142,26 @@ function orderedKeys(value: Data) {
     return (x === -1 ? 999 : x) - (y === -1 ? 999 : y);
   });
 }
+function editorDefaults(kind: Kind, value: Data): Data {
+  if (kind === "pages" && value.path === "/")
+    return {
+      ...value,
+      heroBanner: {
+        desktopImage: { ...emptyImage, ...value.heroBanner?.desktopImage },
+        mobileImage: { ...emptyImage, ...value.heroBanner?.mobileImage },
+      },
+    };
+  if (kind === "products") return { concernIds: [], ...value };
+  if (kind === "settings")
+    return {
+      ...value,
+      concernSection: {
+        ...structuredClone(defaultConcernSection),
+        ...value.concernSection,
+      },
+    };
+  return value;
+}
 export function Editor({
   kind,
   recordId,
@@ -154,7 +187,9 @@ export function Editor({
   }[];
 }) {
   const router = useRouter();
-  const [data, setData] = useState<Data>(initialData);
+  const [data, setData] = useState<Data>(() =>
+    editorDefaults(kind, initialData),
+  );
   const [version, setVersion] = useState(initialVersion);
   const [id, setId] = useState(recordId);
   const [live, setLive] = useState(published);
@@ -282,7 +317,7 @@ export function Editor({
                 </span>
                 <button
                   onClick={() => {
-                    setData(revision.data);
+                    setData(editorDefaults(kind, revision.data));
                     setDirty(true);
                     setTab("Content");
                   }}
@@ -294,7 +329,10 @@ export function Editor({
           </>
         ) : (
           groups[tab as keyof typeof groups]
-            .filter((key) => key in data)
+            .filter(
+              (key) =>
+                key in data && (key !== "heroBanner" || data.path === "/"),
+            )
             .map((key) => (
               <Field
                 key={key}
@@ -338,6 +376,94 @@ function Field({
   media: Media[];
 }) {
   const title = label(name);
+  if (name === "concernIds") {
+    const chosen: string[] = Array.isArray(value) ? value : [];
+    const options = references.filter((record) => record.kind === "concerns");
+    return (
+      <fieldset>
+        <legend>{title}</legend>
+        <p className="muted">
+          Choose all that apply. In homepage settings, selection order controls
+          the slider; leave empty to show all eligible concerns. Empty or hidden
+          concerns stay off the homepage.
+        </p>
+        <div className="checks">
+          {options.map((record) => (
+            <label key={record.id}>
+              <input
+                type="checkbox"
+                checked={chosen.includes(record.id)}
+                onChange={(event) =>
+                  onChange(
+                    event.target.checked
+                      ? [...chosen, record.id]
+                      : chosen.filter((id) => id !== record.id),
+                  )
+                }
+              />
+              {record.title}
+            </label>
+          ))}
+        </div>
+        {!options.length && (
+          <p className="muted">Create a concern under Shop by concern first.</p>
+        )}
+        {chosen.length > 0 && (
+          <ol className="concern-order">
+            {chosen.map((id, index) => (
+              <li key={id}>
+                <span>
+                  {options.find((record) => record.id === id)?.title ??
+                    "Unavailable concern"}
+                </span>
+                <div>
+                  <button
+                    type="button"
+                    disabled={index === 0}
+                    aria-label={"Move concern " + (index + 1) + " up"}
+                    onClick={() => {
+                      const next = [...chosen];
+                      [next[index - 1], next[index]] = [
+                        next[index]!,
+                        next[index - 1]!,
+                      ];
+                      onChange(next);
+                    }}
+                  >
+                    ↑
+                  </button>
+                  <button
+                    type="button"
+                    disabled={index === chosen.length - 1}
+                    aria-label={"Move concern " + (index + 1) + " down"}
+                    onClick={() => {
+                      const next = [...chosen];
+                      [next[index + 1], next[index]] = [
+                        next[index]!,
+                        next[index + 1]!,
+                      ];
+                      onChange(next);
+                    }}
+                  >
+                    ↓
+                  </button>
+                  <button
+                    type="button"
+                    aria-label={"Remove concern " + (index + 1)}
+                    onClick={() =>
+                      onChange(chosen.filter((item) => item !== id))
+                    }
+                  >
+                    Remove
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ol>
+        )}
+      </fieldset>
+    );
+  }
   if (name === "categoryIds")
     return (
       <fieldset>
@@ -546,6 +672,13 @@ function Field({
     return (
       <fieldset className={image ? "wide" : undefined}>
         <legend>{title}</legend>
+        {name === "heroBanner" && (
+          <p className="muted">
+            Choose the wide desktop artwork and a separate square (1:1) mobile
+            image. Both use the image library below. Save draft to preview;
+            publish to update the website.
+          </p>
+        )}
         {image && (
           <ImageSelector value={value} media={media} onChange={onChange} />
         )}

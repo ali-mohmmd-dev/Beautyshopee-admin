@@ -10,9 +10,11 @@ export async function GET(request: Request) {
   const path =
     record.kind === "pages"
       ? String((record.draft as Record<string, unknown>).path)
-      : record.kind === "products"
-        ? "/products/" + record.slug
-        : "/";
+      : record.kind === "concerns"
+        ? "/concerns/" + record.slug
+        : record.kind === "products"
+          ? "/products/" + record.slug
+          : "/";
   const url = new URL("/api/cms-preview", process.env.STOREFRONT_URL);
   url.searchParams.set("token", process.env.CMS_CONTENT_TOKEN!);
   url.searchParams.set("path", path);
